@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo da Memória</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'jogo/css/estilo1.css' %}">
+  <script src="{% static 'jogo/js/game.js' %}" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400&family=Madimi+One&display=swap" rel="stylesheet">
+</head>
+<body>
+  <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+  <div class="titulo">
+    <h1>Jogo da memória</h1>
+  </div>
+  <div id="viradasContador">
+    <p>Tentativas: <span id="contador">0</span></p>
+  </div>
+  <div id="container">
+    <div class="card" id="card0">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card1">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card2">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card3">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card4">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card5">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card6">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card7">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card8">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card9">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card10">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+    <div class="card" id="card11">
+      <div class="face back"></div>
+      <div class="face front"></div>
+    </div>
+  </div> 
+  <a href="{% url 'menu' %}">Voltar ao Menu</a>
+  <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="logout-button">Deslogar</button>
+  </form>
+  <form id="fimDeJogoForm" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="jogador_id" value="{{ jogador.id }}">
+  </form>  
+  <footer>
+    <p>
+      Disciplina: Programação para Internet <br>
+      Professor: Marcelo Figueiredo Barbosa Júnior <br>
+      IFRN - Campus Santa Cruz/RN <br>
+      Todos os direitos reservados &copy
+    </p>
+    <p>
+      Componentes: <br>
+      Maria Eduarda Dantas Batista <br>
+      Maria Eloiza Brilhante de Lima <br>
+      Rebeca Eduarda de Oliveira Santos
+    </p>
+  </footer>
+  <div id="modalAgain">
+    <img src="{% static 'jogo/img/again.png' %}" alt="Recomeçar jogo" id="imgAgain">
+  </div>
+</body>
+</html>

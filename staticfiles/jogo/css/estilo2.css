@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lexend", sans-serif;
+}
+body {
+    background-image: url(../img/fundo.png);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+div {
+    text-align: center;
+}
+a {
+    background-color: #EBDACC;
+    color: #5A0F19;
+    border-radius: 20px;
+    padding: 30px;
+    display: inline-block;
+    width: 200px; 
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none; 
+    font-size: 20px;
+}
+h1 {
+    width: 700px;
+    justify-content: center;
+    margin: auto;
+    color: #EBDACC;
+    text-align: center;
+    font-size: 50px;
+    background-color: #5A0F19;
+    border-radius: 20px;
+}
+footer {
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+    background-color: #5A0F19;
+    color: #EBDACC;
+}
+footer > p {
+    display: inline-flex;
+    margin-right: 20px;
+    color: #EBDACC;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jogo/css/estilo4.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400&family=Madimi+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Ranking</h1>
+    <table>
+        <tr>
+            <th>Posição</th>
+            <th>Nome do Jogador</th>
+            <th>Tentativas</th>
+            <th>Data e Hora</th>
+        </tr>
+        {% for rank in rankings %}
+        <tr>
+            <td>{{ forloop.counter }}º</td>
+            <td>{{ rank.usuario }}</td>
+            <td>{{ rank.tentativas }}</td>
+            <td>{{ rank.data_hora_partida }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Nenhum dado disponível</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'menu' %}">Voltar ao Menu</a>
+    <footer>
+        <p>
+          Disciplina: Programação para Internet <br>
+          Professor: Marcelo Figueiredo Barbosa Júnior <br>
+          IFRN - Campus Santa Cruz/RN <br>
+          Todos os direitos reservados &copy
+        </p>
+        <p>
+          Componentes: <br>
+          Maria Eduarda Dantas Batista <br>
+          Maria Eloiza Brilhante de Lima <br>
+          Rebeca Eduarda de Oliveira Santos
+        </p>
+      </footer>
+</body>
+</html>

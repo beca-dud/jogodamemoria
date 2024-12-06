@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'jogo/css/estilo3.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400&family=Madimi+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Jogo da memória</h1>
+    {% if messages %}
+        <script>
+            {% for message in messages %}
+                alert("{{ message }}");
+            {% endfor %}
+        </script>
+    {% endif %}
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <label for="username">Usuário:</label>
+        <input type="text" id="username" name="username" required>
+        <label for="password">Senha:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Entrar</button>
+    </form>
+  <footer>
+    <p>
+      Disciplina: Programação para Internet <br>
+      Professor: Marcelo Figueiredo Barbosa Júnior <br>
+      IFRN - Campus Santa Cruz/RN <br>
+      Todos os direitos reservados &copy
+    </p>
+    <p>
+      Componentes: <br>
+      Maria Eduarda Dantas Batista <br>
+      Maria Eloiza Brilhante de Lima <br>
+      Rebeca Eduarda de Oliveira Santos
+    </p>
+  </footer>
+</body>
+</html>

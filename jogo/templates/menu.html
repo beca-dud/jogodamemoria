@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'jogo/css/estilo2.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@200;400&family=Madimi+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Bem-vindo ao Jogo da Memória</h1>
+    <div>
+        <a href="{% if user.is_authenticated %}{% url 'jogo_memoria' %}{% else %}{% url 'login' %}{% endif %}">Start Game</a>
+    </div>
+    <div>
+        <a href="{% url 'ranking' %}">Ranking</a>
+    </div>
+    <footer>
+        <p>
+          Disciplina: Programação para Internet <br>
+          Professor: Marcelo Figueiredo Barbosa Júnior <br>
+          IFRN - Campus Santa Cruz/RN <br>
+          Todos os direitos reservados &copy
+        </p>
+        <p>
+          Componentes: <br>
+          Maria Eduarda Dantas Batista <br>
+          Maria Eloiza Brilhante de Lima <br>
+          Rebeca Eduarda de Oliveira Santos
+        </p>
+      </footer>
+</body>
+</html>

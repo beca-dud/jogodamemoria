@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lexend", sans-serif;
+}
+body {
+    background-image: url(/static/jogo/img/fundo.png);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.titulo {
+    width: 400px;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1 {
+    color: #EBDACC;
+    text-align: center;
+    font-size: 30px;
+    background-color: #5A0F19;
+    border-radius: 20px;
+}
+#viradasContador {
+    color: #EBDACC;
+    background-color: #5A0F19;
+    border-radius: 20px;
+    width: 200px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+#container {
+    display: grid;
+    grid-template-columns: repeat(6, 160px);
+    grid-auto-rows: minmax(240px, auto);
+    grid-gap: 10px;
+    justify-content: center;
+    width: 90%;
+    max-width: 995px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+@media screen and (max-width: 900px) {
+    #container {
+        grid-template-columns: repeat(4, 160px);
+    }
+}
+@media screen and (max-width: 600px) {
+    #container {
+        grid-template-columns: repeat(3, 160px);
+    }
+}
+@media screen and (max-width: 500px) {
+    #container {
+        grid-template-columns: repeat(2, 160px);
+    }
+}
+.card {
+    width: 100%;
+    height: 100%;
+    perspective: 400px;
+    overflow: hidden;
+}
+.face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    transition: all 1s;
+    backface-visibility: hidden;
+}
+.back {
+    background-image: url(/static/jogo/img/back_card.png);
+}
+.back.virado {
+    transform: rotateY(180deg)
+}
+.front {
+    transform: rotateY(-180deg);
+}
+.front.virado {
+    transform: rotateY(0);
+}
+.card:hover {
+    box-shadow: 0 0 10px #EBDACC;
+    border-radius: 10px;
+}
+#modalAgain {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#imgAgain {
+    width: 30%;
+    height: 45%;
+    margin-top: 150px;
+    border-radius: 10px;
+}
+footer {
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+    background-color: #5A0F19;
+    color: #EBDACC;
+}
+footer > p {
+    display: inline-flex;
+    margin-right: 20px;
+    color: #EBDACC;
+}
+a {
+    background-color: #EBDACC;
+    color: #5A0F19;
+    border-radius: 20px;
+    padding: 10px;
+    width: 150px;
+    margin: auto;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+.logout-button {
+    background-color: #EBDACC;
+    color: #5A0F19;
+    border-radius: 20px;
+    padding: 10px;
+    width: 170px;
+    font-size: medium;
+    margin: auto;
+    margin-bottom: 20px;
+    border-style: none;
+}
